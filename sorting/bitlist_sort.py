@@ -1,14 +1,14 @@
 def bitlist_sort(data):
-    returnArray = []
-    largestNumber = data[0]
+    return_array = []
+    largest_number = data[0]
     for i in range(1, len(data)):
-        if data[i] > largestNumber:
-            largestNumber = data[i]
-    bList = [0]*largestNumber
+        if data[i] > largest_number:
+            largest_number = data[i]
+    b_list = [0]*largest_number
     for j in range(0, len(data)):
         index = data[j] - 1
-        bList[index] += 1
-    for k in range(0, len(bList)):
-        if bList[k] != 0:
-            returnArray.append(k + 1)
-    return returnArray
+        b_list[index] += 1
+    for k in range(0, len(b_list)):
+        if b_list[k] != 0:
+            return_array.append(k + 1)
+    return return_array

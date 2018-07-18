@@ -10,7 +10,6 @@ def cocktail_shaker(a_list):
                 swapped = True
         if not swapped:
             break
-        print(a_list)
         hi -= 1
         swapped = False
         for j in range(hi, lo, -1):
@@ -22,5 +21,4 @@ def cocktail_shaker(a_list):
             break
         else:
             swapped = False
-        print(a_list)
     return a_list

@@ -1,4 +1,4 @@
-from referential_array import build_array
+from Algorithms.abstract_data_types.referential_array import build_array
 
 
 class Heap:
