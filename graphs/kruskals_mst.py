@@ -13,15 +13,14 @@ finalised = []
 mst_weight = 0
 
 # continually try adding edges in sorted order provided they do not create a cycle
-for edge in edge_list:
-    u, v = edge[0], edge[1]
+for u, v, w in edge_list:
     # if the 2 vertices are in disjoint sets, there is no cycle
     if union_find.set_id(u) != union_find.set_id(v):
         # add the edge to the finalised graph
-        finalised.append(edge)
+        finalised.append((u, v, w))
         # union the sets of both vertices incident to the edge
         union_find.union_sets(u, v)
-        mst_weight += edge[2]
+        mst_weight += w
     # break once the number of edges is that of a tree, |V|-1
     if len(finalised) == vertex_count - 1:
         break
