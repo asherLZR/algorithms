@@ -1,7 +1,7 @@
 import random
 import timeit
 from datetime import datetime
-from Algorithms.sorting import *
+from sorting import *
 
 import numpy as np
 import pandas as pd
