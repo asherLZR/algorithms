@@ -15,6 +15,7 @@ def fib_aux(n, before_last, last):
     else:
         return fib_aux(n-1, last, before_last+last)
 
+
 def fib_memo(n):
     if n == 0:
         return 0

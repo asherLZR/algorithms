@@ -1,39 +1,39 @@
-def heaps(L, n):
+def heaps(a_list, n):
     if n == 1:
-        print(L)
+        print(a_list)
     else:
         for i in range(0, n-1):
-            heaps(L, n-1)
+            heaps(a_list, n - 1)
             if n % 2 == 0:
-                L[i], L[n-1] = L[n-1], L[i]
+                a_list[i], a_list[n - 1] = a_list[n - 1], a_list[i]
             else:
-                L[0], L[n-1] = L[n-1], L[0]
-        heaps(L, n-1)
+                a_list[0], a_list[n - 1] = a_list[n - 1], a_list[0]
+        heaps(a_list, n - 1)
 
 
-def altHeaps(L, n):
+def alt_heaps(a_list, n):
     # the original orientation of the list
-    if n == len(L):
-        print(L)
+    if n == len(a_list):
+        print(a_list)
     # if the subset is greater than 2 items, continue breaking it down
     if n > 1:
         # leave the last character of the list unchanged and generate permutations for the rest
-        altHeaps(L, n - 1)
+        alt_heaps(a_list, n - 1)
     # for character except the last character
     for i in range(0, n-1):
         # if the subset is divisible by 2, put element in last position
         if n % 2 == 0:
-            L[i], L[n-1] = L[n-1], L[i]
-            print(L)
+            a_list[i], a_list[n - 1] = a_list[n - 1], a_list[i]
+            print(a_list)
         # if n is indivisible by 2,
         else:
-            L[0], L[n-1] = L[n-1], L[0]
-            print(L)
+            a_list[0], a_list[n - 1] = a_list[n - 1], a_list[0]
+            print(a_list)
 
         # if the subset is greater than 2 items, continue breaking it down
         # at the base case, i = 1,
         if n > 2:
-            altHeaps(L, n-1)
+            alt_heaps(a_list, n - 1)
 
 
 def permute(a_list, count=0):
