@@ -17,6 +17,7 @@ def fib_aux(n, before_last, last):
 
 
 def fib_memo(n):
+    memo = [None] * (n + 1)
     if n == 0:
         return 0
     if n < 2:
@@ -29,6 +30,7 @@ def fib_memo(n):
 
 
 def fib_bottom_up(n):
+    memo = [0, 0]
     for i in range(n+1):
         if i == 0:
             memo[0] = 0
@@ -38,17 +40,25 @@ def fib_bottom_up(n):
             memo[0], memo[1] = memo[1], memo[0] + memo[1]
     return memo[1]
 
+def fib_matrix(n):
+    if n <= 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+    if n % 2 == 0:
+        n /= 2
+        return fib_matrix(n) * (2 * fib_matrix(n+1) - fib_matrix(n))
+    else:
+        n = (n-1)/2
+        return fib_matrix(n+1)**2 + fib_matrix(n)**2
 
-n = 50
-memo = [None]*(n+1)
-print(fib_memo(50))
-
-n = 50
-memo = [0, 0]
-print(fib_bottom_up(50))
-
-n = 50
-print(fib_aux(50, 0, 1))
+val = 50
+# print(fib_memo(val))
+# print(fib_bottom_up(val))
+# print(fib_aux(val, 0, 1))
+print(fib(val))
+print(fib_matrix(val))
+# F(k)[2F(k +1)−F(k)]
 
 
 # def factorial(n):
