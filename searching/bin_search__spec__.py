@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-# from Searching.bin_search import search
-from searching.bin_search import iterative_search as search
-
+# from searching.bin_search import search
+# from searching.bin_search import iterative_search as search
+from searching.bin_search import repeat as search
 
 class TestSearch(TestCase):
     def test_in_list(self):

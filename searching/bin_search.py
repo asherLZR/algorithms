@@ -1,3 +1,32 @@
+def alg_bin_search(a_list, target):
+    lo, hi = 0, len(a_list)
+    while lo < hi-1:
+        mid = (lo + hi)//2
+        if target >= a_list[mid]:
+            lo = mid
+        else:
+            hi = mid
+    if len(a_list) > 0 and a_list[lo] == target:
+        return lo
+    else:
+        return -1
+
+
+def repeat(a_list, target):
+    lo, hi = 0, len(a_list)-1
+    found = -1
+    while lo <= hi:
+        mid = (lo + hi)//2
+        if target == a_list[mid]:
+            found = mid
+            hi = mid - 1
+        elif target < a_list[mid]:
+            hi = mid - 1
+        else:
+            lo = mid + 1
+    return found
+
+
 def iterative_search(a_list, target):
     if not a_list:
         return -1
