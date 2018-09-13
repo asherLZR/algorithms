@@ -1,5 +1,5 @@
 import unittest
-from sorting.insertion_sort import insertion_sort_reversed as tested_sort
+from sorting.code_golf_quick_sort import s as tested_sort
 
 
 class SortTest(unittest.TestCase):
