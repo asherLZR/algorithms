@@ -21,6 +21,7 @@ for _ in range(t):
     C[s] = 0
 
     for _ in range(n):
+        # replace this with a min heap
         chosen, c_weight = min(enumerate(C), key=lambda x: x[1])
         C[chosen] = float('inf')
         U[chosen] = True
