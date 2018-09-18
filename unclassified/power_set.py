@@ -16,7 +16,7 @@ def all_subsets(a):
     1 1 1
     
     """
-    for mask in range(0, (1 << n)):
+    for mask in range(1 << n):
         subset = []
         for i in range(n):
             """
