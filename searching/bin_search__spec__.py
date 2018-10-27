@@ -2,7 +2,7 @@ from unittest import TestCase
 
 # from searching.bin_search import search
 # from searching.bin_search import iterative_search as search
-from searching.bin_search import repeat as search
+from searching.bin_search import alg_bin_search as search
 
 class TestSearch(TestCase):
     def test_in_list(self):

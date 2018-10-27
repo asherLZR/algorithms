@@ -1,11 +1,24 @@
 def alg_bin_search(a_list, target):
+    """
+    Termination:
+        lo < hi-1 implies that lo and hi differ by at least 2
+        This means that lo < mid < hi
+        As such, the search space always decreases (until lo >= hi-1 where the algorithm terminates)
+    Loop Invariant (using inclusive ranges):
+        Target in a_list[0..N-1] iif target in a_list[lo..hi-1]
+    :param a_list: the list to be bin searched over
+    :param target: the item to be found in the list
+    :return: the index of the target if found in a_list, else -1 if not found
+    """
     lo, hi = 0, len(a_list)
+    # Inv holds true before start of loop
     while lo < hi-1:
         mid = (lo + hi)//2
         if target >= a_list[mid]:
-            lo = mid
+            lo = mid                # Target in a_list[0..N-1] iif target in a_list[mid..hi-1]
         else:
-            hi = mid
+            hi = mid                # Target in a_list[0..N-1] iif target in a_list[lo..mid-1]
+    # Inv holds true at the end of the loop
     if len(a_list) > 0 and a_list[lo] == target:
         return lo
     else:
