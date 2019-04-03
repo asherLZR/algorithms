@@ -1,0 +1,1 @@
+print("YES" if [x+1 for x in range(int(input()))] == sorted(set(list(map(int, input().split()))[1:] + list(map(int, input().split()))[1:])) else "NO")

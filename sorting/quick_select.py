@@ -14,7 +14,7 @@ def quick_select_aux(a_list, lo, hi, k):
     This algorithm finds the kth smallest element in unsorted a_list. Median of median algorithm gives
     O(N log N) worst case as it returns a pivot if it is within a certain range from the median.
 
-    :complexity: O(N^2) worst case, O(N log N) average case
+    :complexity: O(N^2) worst case, O(N) average case
     """
     a_list, p = partition(a_list, lo, hi, lo)
     if k < p:
